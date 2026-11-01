@@ -77,6 +77,23 @@ def probe(url, timeout=15):
         return False, 0
 
 
+def probe_any(url, timeout=15):
+    """先直连，不通再走镜像。
+
+    国内直连 GitHub 多半不通，如果只探测直连就会误判成「Release 里没这个文件」，
+    从而退回更慢的公共镜像。返回 (ok, length, 实际可用的 url)。
+    """
+    candidates = [url]
+    mirrored = gh_mirror(url)
+    if mirrored != url:
+        candidates.append(mirrored)
+    for u in candidates:
+        ok, n = probe(u, timeout)
+        if ok:
+            return True, n, u
+    return False, 0, url
+
+
 def download(url, dest, expected=None, label=""):
     """带断点续传的下载。先直连，失败自动换 GitHub 镜像。"""
     dest = Path(dest)
@@ -233,12 +250,13 @@ def install(cfg, model_name="small", force=False):
     # 先试 release（快），再试公共镜像（慢）
     tried_release = False
     if base:
-        ok, length = probe(f"{base}/{name}")
+        ok, length, real_url = probe_any(f"{base}/{name}")
         if ok:
             tried_release = True
             log(f"从 Release 下载模型 {name}（{human(length or size)}）…")
-            if download(f"{base}/{name}", mp, expected=length or size, label="model"):
+            if download(real_url, mp, expected=length or size, label="model"):
                 return True
+            log("  Release 下载失败，改走公共镜像…")
 
     if not tried_release:
         log(f"从公共镜像下载模型 {name}（{human(size)}），速度约 100–200 KB/s，预计几十分钟…")
