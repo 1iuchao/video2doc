@@ -1,9 +1,9 @@
 ---
-name: douyin-analyze
-description: 把抖音（及 B 站/YouTube 等）视频转成文字并做内容分析，产出「原文 + 分析」两份 markdown。当用户发来抖音分享文案、短视频链接，或说"分析这条视频""这条讲了什么""把视频转成文字"时使用。全程本地运行，不上传音频，不调用任何在线 API。
+name: video2doc
+description: video2doc —— 把抖音（及 B 站/YouTube 等）视频转成文字并做内容分析，产出「原文 + 分析」两份 markdown。当用户发来抖音分享文案、短视频链接，或说"分析这条视频""这条讲了什么""把视频转成文字""video2doc"时使用。全程本地运行，不上传音频，不调用任何在线 API。
 ---
 
-# 抖音视频分析
+# video2doc · 抖音视频转文档
 
 一句话：用户丢一段分享文案给你，你产出两份文件——**原文**（清洗后的转录稿）和**分析**（你写的）。
 
@@ -12,7 +12,7 @@ description: 把抖音（及 B 站/YouTube 等）视频转成文字并做内容�
 ## 路径约定（先看这段，否则文件会落错地方）
 
 本 skill 的代码装在一个固定目录里（下称 **SKILL_DIR**，比如
-`C:\Users\你\.workbuddy\skills\douyin-skill`），但**数据和输出要落在用户当前工作目录**（下称 **WORK_DIR**）。
+`C:\Users\你\.workbuddy\skills\video2doc`），但**数据和输出要落在用户当前工作目录**（下称 **WORK_DIR**）。
 
 规则：
 

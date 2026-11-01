@@ -32,7 +32,7 @@ import paths
 CHUNK = 1024 * 512
 
 # GitHub Release 上的资产名。改成你自己仓库的地址即可。
-DEFAULT_RELEASE = "https://github.com/1iuchao/douyin-skill/releases/download/v1.0.0"
+DEFAULT_RELEASE = "https://github.com/1iuchao/video2doc/releases/download/v1.0.0"
 ENGINE_ZIP = "engine-win64.zip"
 
 # 公共镜像兜底（慢，但不用自己发 release 也能装）

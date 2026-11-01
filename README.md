@@ -1,15 +1,37 @@
-# 抖音视频分析 Skill
+# video2doc
 
-> **这是一个个人学习效率工具。**
-> 针对的是「看长视频容易走神、重要内容要反复拖进度条」这个问题——把视频转成文字，
-> 就能像读文档一样读、检索、回头查。
+把抖音视频变成文字文档，让 AI 读懂它。
+
+> **这是一份给 agent 用的 skill。** 你只要说一句「装 video2doc」，agent 自己就能部署完。
 >
-> 它**不是**下载器、搬运工具或采集器。**不支持也不建议**用于批量抓取、内容二次分发、
+> **它解决的问题**：看长视频容易走神，重要内容要反复拖进度条。转成文字之后就能
+> 像读文档一样读、直接搜关键词、回头随时查。
+>
+> 它**不是**下载器、搬运工具或采集器。不支持也不建议用于批量抓取、内容二次分发、
 > 商业服务。使用前请读 [NOTICE.md](NOTICE.md)。
 >
 > 全程本地运行——音频不上传、不调任何在线 API、不花钱。
 
 转写用 whisper.cpp + Vulkan（支持 NVIDIA / AMD / Intel Arc，无独显走 CPU）。
+
+---
+
+## 一句话安装
+
+对 agent 说：
+
+> **安装 video2doc 这个 skill**
+
+或者直接给它这一行：
+
+```bash
+git clone --depth 1 https://github.com/1iuchao/video2doc.git ~/.workbuddy/skills/video2doc
+```
+
+装完再说「帮我分析这条抖音 <分享链接>」，agent 会读 `SKILL.md`，自己检查环境、
+缺什么装什么。**你不需要懂 Node、Python、whisper 是什么。**
+
+其他 agent 框架同理，把这个目录放进它的 skills 路径即可。
 
 ---
 
@@ -24,23 +46,11 @@
 
 ---
 
-## 安装
-
-### 方式一：让 agent 自己装（推荐）
-
-把仓库地址给你的 agent，让它克隆到 skills 目录：
+## 手动安装（不想用 agent 的话）
 
 ```bash
-git clone https://github.com/1iuchao/douyin-skill.git ~/.workbuddy/skills/douyin-skill
-```
-
-然后直接说「帮我分析这条抖音 <链接>」，agent 会读 `SKILL.md` 自己完成环境检查。
-
-### 方式二：手动
-
-```bash
-git clone https://github.com/1iuchao/douyin-skill.git
-cd douyin-skill
+git clone --depth 1 https://github.com/1iuchao/video2doc.git
+cd video2doc
 python setup.py --check      # 看缺什么
 python setup.py --install    # 自动下载引擎和模型
 python setup.py --verify     # 真跑一次转写确认真能用
@@ -113,7 +123,7 @@ yt-dlp 算不出来，稳定报 403。而**浏览器自己会算签名**，所�
 ## 目录结构
 
 ```
-douyin-skill/
+video2doc/
 ├─ SKILL.md              给 agent 的操作规范（核心）
 ├─ 使用教程.md            给最终用户看的说明
 ├─ NOTICE.md             使用边界与免责（请读）
