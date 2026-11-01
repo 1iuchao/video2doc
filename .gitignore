@@ -20,3 +20,7 @@ release/
 
 # 个人配置
 config.local.json
+
+# 临时文件
+_*.txt
+_*/
