@@ -1,0 +1,36 @@
+MIT License
+
+Copyright (c) 2026 1iuchao
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+补充说明（不作为许可条件，仅表达作者意图）：
+
+本项目是个人学习辅助工具，作者在 NOTICE.md 中说明了期望的使用方式与
+不支持的用法。MIT 许可在法律上不限制商业使用，但作者强烈不建议将本项目
+用于批量抓取、内容搬运、商业分发或有偿服务。
+
+第三方组件：
+- whisper.cpp / ggml —— MIT，https://github.com/ggerganov/whisper.cpp
+- Whisper 模型权重 —— MIT，OpenAI
+- vibe-server.exe —— 来自 Vibe 项目，MIT，https://github.com/thewh1teagle/vibe
+- ffmpeg —— LGPL/GPL，https://ffmpeg.org
+- yt-dlp —— Unlicense，https://github.com/yt-dlp/yt-dlp

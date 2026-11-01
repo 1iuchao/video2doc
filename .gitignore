@@ -1,0 +1,22 @@
+# 引擎和模型，用户本地生成，不进仓库
+engine/
+*.bin
+*.exe
+
+# 运行时数据
+视频分析数据/
+aaa输出/
+__pycache__/
+*.pyc
+
+# Release 打包产物
+release/
+
+# 媒体文件
+*.mp4
+*.wav
+*.m4a
+*.srt
+
+# 个人配置
+config.local.json

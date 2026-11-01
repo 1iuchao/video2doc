@@ -1,0 +1,19 @@
+{
+  "_说明": "配置模板。改完不要提交到公开仓库（或记得把个人路径改回去）。",
+
+  "release_base": "https://github.com/1iuchao/douyin-skill/releases/download/v1.0.0",
+
+  "gpu_device": "auto",
+  "language": "zh",
+
+  "model": "models/ggml-small.bin",
+  "engine_dir": "engine",
+
+  "data_dir": "视频分析数据",
+  "output_dir": "aaa输出",
+  "keep_video_hours": 24,
+  "heartbeat_timeout": 600,
+
+  "proxy": "",
+  "cookies_file": ""
+}
