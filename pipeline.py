@@ -403,7 +403,7 @@ def _run(url, cfg, ws, args):
         "summary_usable": usable,
         "output_dir": str(paths.output_dir(cfg)),
         "already_done": bool(ws.find_done(vid)),
-        "preview": transcript[:200],
+        "preview": transcript[:120],
     }, ensure_ascii=False))
     return 0
 
