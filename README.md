@@ -33,6 +33,21 @@ git clone --depth 1 https://github.com/1iuchao/video2doc.git ~/.workbuddy/skills
 
 其他 agent 框架同理，把这个目录放进它的 skills 路径即可。
 
+## 怎么触发
+
+发链接，加一句「解析我」：
+
+```
+https://v.douyin.com/xxxx/
+解析我
+```
+
+**只发链接、不说这句，agent 会先问一句「要解析这条吗」**——避免它看见链接就自作主张，
+你随手贴个地址可能只是想问别的事。
+
+「解析我」不必是原话，「解析这条」「分析一下」「转成文字」这类意思都认。
+
+
 ---
 
 ## 它能做什么
